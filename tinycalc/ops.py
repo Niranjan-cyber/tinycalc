@@ -28,6 +28,11 @@ def mean(values):
 
 
 def parse_number(text):
-    """Parse user input like "42", "-3.5" or "1,000"."""
-    text = text.strip()
-    return float(text) if "." in text else int(text)
+    """Parse user input like "42", "-3.5" or "1,000".
+
+    Removes commas used as thousands separators before converting.
+    """
+    # Strip whitespace and remove comma separators
+    cleaned = text.strip().replace(",", "")
+    # Use float for numbers containing a decimal point, otherwise int
+    return float(cleaned) if "." in cleaned else int(cleaned)
