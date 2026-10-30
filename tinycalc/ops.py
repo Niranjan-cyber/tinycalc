@@ -22,8 +22,11 @@ def power(a, b):
 
 def mean(values):
     values = list(values)
+    # The function should raise ValueError for empty input, matching the
+    # behavior expected by the tests. Returning 0 masks the error and leads to
+    # incorrect semantics.
     if not values:
-        return 0
+        raise ValueError("mean of empty sequence")
     return sum(values) / len(values)
 
 
