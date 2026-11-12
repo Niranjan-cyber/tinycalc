@@ -10,10 +10,8 @@ def subtract(a, b):
 
 
 def divide(a, b):
-    try:
-        return a / b
-    except ZeroDivisionError:
-        return 0
+    # Perform division and allow ZeroDivisionError to propagate.
+    return a / b
 
 
 def power(a, b):
